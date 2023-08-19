@@ -57,4 +57,8 @@ Tous les réglages et autres variables d'environnement sont définis dans le fic
 
 A l'heure actuelle, ce programme se limite aux conteneurs dont l'image est disponible sur le **Docker Hub**. Tous les conteneurs provenant d'autres registres doivent être ajoutés à la **liste d'exceptions**.
 
-Ce programme ne peut vérifier le besoin de mise à jour seulement sur **la machine sur laquelle il est installé**. Si vous avez plusieurs machines, il vous faut **une instance par machine**
+Ce programme ne peut vérifier le besoin de mise à jour seulement sur **la machine sur laquelle il est installé**. Si vous avez plusieurs machines, il vous faut **une instance par machine**.
+
+## Notes
+
+Vous verrez une erreur à la première exécution. Cela est parfaitement normal et est dû au fait que le fichier des logs n'existe pas encore. Ce dernier sera créé à ce moment là. Si vous souhaitez ne pas voir cette erreur apparaître, vous pouvez créer vous-même le fichier avant la première exécution avec la commande `touch logs.txt`.
