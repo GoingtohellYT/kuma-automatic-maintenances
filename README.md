@@ -21,7 +21,7 @@ A chaque exécution, le programme compare la date de création des conteneurs pr
 1. cloner le repo : `git clone https://github.com/GoingtohellYT/kuma-automatic-maintenances.git`
 2. rendre les scripts shell exécutable : `chmod +x pre-script.sh` et `chmod +x post-script.sh`
 3. installer les dépendances des modules NodeJS avec `npm install`
-4. s'assurer que Watchtower est exécuté à des heures précises avec la syntaxe cron (par exemple "30 0 12,0 * * *" pour tout les jours à 12h 00min 30s et 00h 00min 30s)
+4. s'assurer que Watchtower est exécuté à des heures précises avec la syntaxe cron (par exemple "30 0 12,0 * * *" pour tous les jours à 12h 00min 30s et 00h 00min 30s)
 5. ajouter les horaires d'exécution des scripts dans le crontab (le pre-script avant Watchtower et le post-script après -> par exemple "0 12,0 * * *" et "1 12,0 * * *")
     1. éditer le crontab
        `crontab -e`
@@ -41,12 +41,12 @@ Tous les réglages sont définis dans le fichier _settings.json_.
 | probe-type | défini si le nom des somdes _uptime-kuma_ correspond au noms des conteneurs ou à leur repository | _"repo"_ pour repository et _"name"_ pour le nom |
 | max-update-delay | défini l'intervalle de temps maximale entre la création de la maintenance et sa suppression (en minutes) | n'importe quel nombre entier supérieur à 0 |
 | max-logs-size | défini la taille maximale du fichier des logs (en Mo) -> quand cette taille est dépassée, les logs sont supprimés | n'importe quelle nombre entier ou décimal positif (0 supprime les logs à chaque exécution) |
-| log-level | défini le niveau de logs voulu | - "info" pour tout les logs (aucune maintenance supprimée/créée, maintenance supprimée/créée, suppression des logs, erreurs) |
+| log-level | défini le niveau de logs voulu | - "info" pour tous les logs (aucune maintenance supprimée/créée, maintenance supprimée/créée, suppression des logs, erreurs) |
 |           |                         | - "low" pour quand une maintenance est créée/supprimée et les erreurs |
 |           |                         | - "error" pour les erreurs seulement |
 |           |                         | - "none" pour aucun log (max-logs-size devient alors inutile) |
 |            |                                           |
-| containers | défini lesconteneurs non pris en compte | liste des conteneurs exclus. Pour ajouter une valeur, mettre une virgule à la fin et ajouter une partie de l'image entre guillemets (Attention !! Mettre le **registre** excluera tout les conteneurs dont l'image provient de ce **registre**, il en va de même pour le **namespace** et le **tag** ! Pour exclure un seul conteneur, utiliser son **repository**.) |
+| containers | défini lesconteneurs non pris en compte | liste des conteneurs exclus. Pour ajouter une valeur, mettre une virgule à la fin et ajouter une partie de l'image entre guillemets (Attention !! Mettre le **registre** excluera tous les conteneurs dont l'image provient de ce **registre**, il en va de même pour le **namespace** et le **tag** ! Pour exclure un seul conteneur, utiliser son **repository**.) |
 |            |                                           |
 | login | défini l'identifiant utilisé pour accéder à uptime-kuma | votre identifiant sous forme de chaîne de caractères |
 | password | défini le mot de passe utilisé pour accéder à uptime-kuma | votre mot de passe sous forme de chaîne de caractères |
@@ -54,6 +54,6 @@ Tous les réglages sont définis dans le fichier _settings.json_.
 
 ## Limitations
 
-A l'heure actuelle, ce programme se limite aux conteneurs dont l'image est disponible sur le **Docker Hub**. Tout les conteneurs provenant d'autres registres doivent être ajoutés à la **liste d'exceptions**.
+A l'heure actuelle, ce programme se limite aux conteneurs dont l'image est disponible sur le **Docker Hub**. Tous les conteneurs provenant d'autres registres doivent être ajoutés à la **liste d'exceptions**.
 
 Ce programme ne peut vérifier le besoin de mise à jour seulement sur **la machine sur laquelle il est installé**. Si vous avez plusieurs machines, il vous faut **une instance par machine**
