@@ -44,7 +44,9 @@ Tous les réglages sont définis dans le fichier _settings.json_.
 |           |                         | - "low" pour quand une maintenance est créée/supprimée et les erreurs |
 |           |                         | - "error" pour les erreurs seulement |
 |           |                         | - "none" pour aucun log (max-logs-size devient alors inutile) |
-| containers | défini lesconteneurs non pris en compte | liste des conteneurs exclus. Pour ajouter une valeur, mettre une virgule à la fin et ajouter une partie de l'image entre guillemets (Attention !! Mettre le **registre** excluera tout les conteneurs dont l'image provient de ce **registre**, il en va de même pour le **namespace** et le **tag** ! Pour exclure un seul conteneur, utiliser son **repository**.)
+|            |                                           |
+| containers | défini lesconteneurs non pris en compte | liste des conteneurs exclus. Pour ajouter une valeur, mettre une virgule à la fin et ajouter une partie de l'image entre guillemets (Attention !! Mettre le **registre** excluera tout les conteneurs dont l'image provient de ce **registre**, il en va de même pour le **namespace** et le **tag** ! Pour exclure un seul conteneur, utiliser son **repository**.) |
+|            |                                           |
 | login | défini l'identifiant utilisé pour accéder à uptime-kuma | votre identifiant sous forme de chaîne de caractères |
 | password | défini le mot de passe utilisé pour accéder à uptime-kuma | votre mot de passe sous forme de chaîne de caractères |
 | url | défini l'url utilisée pour accéder à uptime-kuma | l'url de votre instance sous forme de chaîne de caractère |
@@ -52,4 +54,5 @@ Tous les réglages sont définis dans le fichier _settings.json_.
 ## Limitations
 
 A l'heure actuelle, ce programme se limite aux conteneurs dont l'image est disponible sur le **Docker Hub**. Tout les conteneurs provenant d'autres registres doivent être ajoutés à la **liste d'exceptions**.
+
 Ce programme ne peut vérifier le besoin de mise à jour seulement sur **la machine sur laquelle il est installé**. Si vous avez plusieurs machines, il vous faut **une instance par machine**
