@@ -1,0 +1,16 @@
+{
+    "settings": {
+        "probe-type": "repo",
+        "max-update-delay": 10,
+        "max-logs-size": 0.000036,
+        "log-level": "info"
+    },
+    "exceptions": {
+        "containers": ["uptime-kuma"]
+    },
+    "server": {
+        "login": "",
+        "password": "",
+        "url": ""
+    }
+}
