@@ -2,7 +2,7 @@
     "settings": {
         "probe-type": "repo",
         "max-update-delay": 10,
-        "max-logs-size": 0.000036,
+        "max-logs-size": 0.5,
         "log-level": "info"
     },
     "exceptions": {
