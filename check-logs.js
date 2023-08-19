@@ -24,7 +24,7 @@ function checkLogsSize() {
         } else {}
     } catch (err) {
         if (log_level != 'none') {
-            fs.writeFileSync(logsPath, `\nLa csuppression du contenu du fichier de logs a échouée à ${currentDate} en raison de : ${err}\n`, {flag: 'a'});
+            fs.writeFileSync(logsPath, `\nLa suppression du contenu du fichier de logs a échouée à ${currentDate} en raison de : ${err}\n`, {flag: 'a'});
         }
     }
 }
