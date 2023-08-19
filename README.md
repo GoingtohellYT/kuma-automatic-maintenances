@@ -30,11 +30,12 @@ A chaque exécution, le programme compare la date de création des conteneurs pr
        `[HORAIRE AVEC SYNTAXE CRON] [CHEMIN/VERS/post-script.sh]`
     3. enregistrer et quitter
 6. insérer votre **login** et votre **password** dans le fichier _settings.json_
-7. préciser si le nom des sondes _uptime-kuma_ correspond au noms des conteneurs ou à leur repository
+7. préciser si le nom des sondes dans _uptime-kuma_ correspond au noms des conteneurs ou à leur repository dans le fichier _settings.json_
+8. insérer l'**url** devotre instance _uptime-kuma_ dans le fichier _settings.json_
 
 ## Réglages et variables d'environnement
 
-Tous les réglages sont définis dans le fichier _settings.json_. 
+Tous les réglages et autres variables d'environnement sont définis dans le fichier _settings.json_.
 
 | Réglage | Action | Valeurs possibles |
 |----------|----------|----------|
