@@ -1,6 +1,8 @@
 #!/bin/bash
 
-cd /home/alexis/scripts
+path=$(pwd)
+
+cd "$path"
 node stop_maintenance.js
 
 exit
