@@ -9,9 +9,9 @@ A chaque exécution, le programme compare la date de création des conteneurs pr
 ## Prérequis
 
 - NodeJS version 18
-    - 'curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -'
-    - 'sudo apt update'
-    - 'sudo apt install nodejs'
+    - `curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -`
+    - `sudo apt update`
+    - `sudo apt install nodejs`
 - NPM (installé avec NodeJS)
 - une instance de [uptime-kuma](https://github.com/louislam/uptime-kuma) avec l'A2F désactivée et les noms des sondes qui correspondent soit au nom des conteneurs, soit au nom des repositories (portainer-ce pour portainer/portainer-ce:latest)
 - une instance de [Watchtower](https://github.com/containrrr/watchtower/) ou autre service capable de mettre à jour les conteneurs automatiquement
