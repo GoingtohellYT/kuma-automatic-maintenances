@@ -13,23 +13,24 @@ A chaque exécution, le programme compare la date de création des conteneurs pr
     - `sudo apt update`
     - `sudo apt install nodejs`
 - NPM (installé avec NodeJS)
-- une instance de [uptime-kuma](https://github.com/louislam/uptime-kuma) avec l'A2F désactivée et les noms des sondes qui correspondent soit au nom des conteneurs, soit au nom des repositories (portainer-ce pour portainer/portainer-ce:latest)
+- une instance de [uptime-kuma](https://github.com/louislam/uptime-kuma) avec l'_A2F désactivée_ et les noms des sondes qui correspondent soit au nom des conteneurs, soit au nom des repositories (portainer-ce pour portainer/portainer-ce:latest)
 - une instance de [Watchtower](https://github.com/containrrr/watchtower/) ou autre service capable de mettre à jour les conteneurs automatiquement
 
 ## Installation
 
 1. cloner le repo : `git clone https://github.com/GoingtohellYT/kuma-automatic-maintenances.git`
 2. rendre les scripts shell exécutable : `chmod +x pre-script.sh` et `chmod +x post-script.sh`
-3. s'assurer que Watchtower est exécuté à des heures précises avec la syntaxe cron (par exemple "30 0 12,0 * * *" pour tout les jours à 12h 00min 30s et 00h 00min 30s)
-4. ajouter les horaires d'exécution des scripts dans le crontab (le pre-script avant Watchtower et le post-script après -> par exemple "0 12,0 * * *" et "1 12,0 * * *")
+3. installer les dépendances des modules NodeJS avec `npm install`
+4. s'assurer que Watchtower est exécuté à des heures précises avec la syntaxe cron (par exemple "30 0 12,0 * * *" pour tout les jours à 12h 00min 30s et 00h 00min 30s)
+5. ajouter les horaires d'exécution des scripts dans le crontab (le pre-script avant Watchtower et le post-script après -> par exemple "0 12,0 * * *" et "1 12,0 * * *")
     1. éditer le crontab
        `crontab -e`
     2. ajouter les tâches à la fin du fichier
        `[HORAIRE AVEC SYNTAXE CRON] [CHEMIN/VERS/pre-script.sh]`
        `[HORAIRE AVEC SYNTAXE CRON] [CHEMIN/VERS/post-script.sh]`
     3. enregistrer et quitter
-5. insérer votre **login** et votre **password** dans le fichier _settings.json_
-6. préciser si le nom des sondes _uptime-kuma_ correspond au noms des conteneurs ou à leur repository
+6. insérer votre **login** et votre **password** dans le fichier _settings.json_
+7. préciser si le nom des sondes _uptime-kuma_ correspond au noms des conteneurs ou à leur repository
 
 ## Réglages et variables d'environnement
 
