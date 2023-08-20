@@ -49,7 +49,7 @@ Tous les réglages et autres variables d'environnement sont définis dans le fic
 |           |                         | - "error" pour les erreurs seulement |
 |           |                         | - "none" pour aucun log (max-logs-size devient alors inutile) |
 |            |                                           |
-| containers | défini les conteneurs non pris en compte | liste des conteneurs exclus. Pour ajouter une valeur, mettre une virgule à la fin et ajouter une partie de l'image entre guillemets (Attention !! Mettre le **registre** excluera tous les conteneurs dont l'image provient de ce **registre**, il en va de même pour le **namespace** et le **tag** ! Pour exclure un seul conteneur, utiliser son **repository**.) |
+| containers | défini les conteneurs non pris en compte | liste des conteneurs exclus. Attention !! Mettre le **registre** excluera tous les conteneurs dont l'image provient de ce **registre**, il en va de même pour le **namespace** et le **tag** ! Pour exclure un seul conteneur, utiliser son **repository**. |
 |            |                                           |
 | login | défini l'identifiant utilisé pour accéder à Uptime Kuma | votre identifiant sous forme de chaîne de caractères |
 | password | défini le mot de passe utilisé pour accéder à Uptime Kuma | votre mot de passe sous forme de chaîne de caractères |
