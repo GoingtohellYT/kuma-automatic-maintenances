@@ -15,7 +15,7 @@ Le tout permet la disparition des notifications "service down" lors des mises à
     - `sudo apt update`
     - `sudo apt install nodejs`
 - NPM (installé avec NodeJS)
-- une instance de [Uptime Kuma](https://github.com/louislam/Uptime Kuma) avec l'_A2F désactivée_ et les noms des sondes qui correspondent soit au nom des conteneurs, soit au nom des repositories (portainer-ce pour portainer/portainer-ce:latest)
+- une instance de [Uptime Kuma](https://github.com/louislam/uptime-kuma) avec l'_A2F désactivée_ et les noms des sondes qui correspondent soit au nom des conteneurs, soit au nom des repositories (portainer-ce pour portainer/portainer-ce:latest)
 - une instance de [Watchtower](https://github.com/containrrr/watchtower/) ou d'un autre service capable de mettre à jour les conteneurs automatiquement
 
 ## Installation
