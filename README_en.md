@@ -15,7 +15,7 @@ The whole allows the disapperance of "service down" notifications on container u
     - `sudo apt update`
     - `sudo apt install nodejs`
 - NPM (installed with NodeJS)
-- an [Uptime Kuma](https://github.com/louislam/Uptime Kuma) instance with _2FA disabled_ and the probe names corresponding to either the containers' names or repository
+- an [Uptime Kuma](https://github.com/louislam/uptime-kuma) instance with _2FA disabled_ and the probe names corresponding to either the containers' names or repository
 - a [Watchtower](https://github.com/containrrr/watchtower/) instance, or similar tool, to automatically update containers
 
 ## Installation
