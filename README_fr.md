@@ -41,7 +41,7 @@ Tous les réglages et autres variables d'environnement sont définis dans le fic
 
 | Réglage / Variable | Action | Valeurs possibles |
 |----------|----------|----------|
-| probe-type | défini si le nom des somdes _Uptime Kuma_ correspond au noms des conteneurs ou à leur repository | _"repo"_ pour repository et _"name"_ pour le nom |
+| probe-type | défini si le nom des sondes _Uptime Kuma_ correspond au noms des conteneurs ou à leur repository | _"repo"_ pour repository et _"name"_ pour le nom |
 | max-update-delay | défini l'intervalle de temps maximale entre la création de la maintenance et sa suppression (en minutes) | n'importe quel nombre entier supérieur à 0 |
 | max-logs-size | défini la taille maximale du fichier des logs (en Mo) -> quand cette taille est dépassée, les logs sont supprimés | n'importe quelle nombre entier ou décimal positif (0 supprime les logs à chaque exécution) |
 | log-level | défini le niveau de logs voulu | - "info" pour tous les logs (aucune maintenance supprimée/créée, maintenance supprimée/créée, suppression des logs, erreurs) |
