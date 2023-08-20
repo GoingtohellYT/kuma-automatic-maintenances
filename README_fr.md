@@ -33,7 +33,7 @@ Le tout permet la disparition des notifications "service down" lors des mises à
     3. enregistrer et quitter
 6. insérer votre **login** et votre **password** dans le fichier _settings.json_
 7. préciser si le nom des sondes dans _Uptime Kuma_ correspond au noms des conteneurs ou à leur repository dans le fichier _settings.json_
-8. insérer l'**url** devotre instance _Uptime Kuma_ dans le fichier _settings.json_
+8. insérer l'**url** de votre instance _Uptime Kuma_ dans le fichier _settings.json_
 
 ## Réglages et variables d'environnement
 
