@@ -1,10 +1,12 @@
-# kuma-automatic-maintenances
+# Kuma automatic maintenances
 
-Ce programme permet de créer automatiquement une maintenance dans uptime-kuma quand un conteneur Docker doit être mis à jour. Il vise les systèmes utilisant des maintenances automatiques pour les conteneurs et permet la disparition des notifications "service down" lors des mises à jours, sans nécessiter d'augmenter le nombre d'essais avant de déclarer une sonde hors-ligne. Il permet également un suivi des mises à jours par le biais de l'historique des maintenances dans uptime-kuma.
+Kuma automatic maintenances est un outil pour créer automatiquement des maintenances Uptime Kuma lors de la mise à jour automatique d'un conteneur par Watchtower.
 
 ## Fonctionnement
 
-A chaque exécution, le programme compare la date de création des conteneurs présents sur la machine à la date du dernier push de l'image sur le Docker Hub. Si le conteneur a une date de création plus récente, alors il est à jour, sinon, il doit être mis à jour. Dans le second cas, une maintenance est créée dans uptime-kuma.
+A chaque exécution, le programme compare la date de création des conteneurs présents sur la machine à la date du dernier push de l'image sur le Docker Hub. Si le conteneur a une date de création plus récente, alors il est à jour, sinon, il doit être mis à jour. Dans le second cas, une maintenance est créée dans Uptime Kuma.
+
+Le tout permet la disparition des notifications "service down" lors des mises à jour, sans pour autant nécessiter d'augmenter le nombre d'essais avant de déclarer une sonde comme étant hors-ligne, et offre aussi la possibilité de garder un historique des dates de mises à jour via les dates de maintenances dans Uptime Kuma.
 
 ## Prérequis
 
@@ -13,7 +15,7 @@ A chaque exécution, le programme compare la date de création des conteneurs pr
     - `sudo apt update`
     - `sudo apt install nodejs`
 - NPM (installé avec NodeJS)
-- une instance de [uptime-kuma](https://github.com/louislam/uptime-kuma) avec l'_A2F désactivée_ et les noms des sondes qui correspondent soit au nom des conteneurs, soit au nom des repositories (portainer-ce pour portainer/portainer-ce:latest)
+- une instance de [Uptime Kuma](https://github.com/louislam/Uptime Kuma) avec l'_A2F désactivée_ et les noms des sondes qui correspondent soit au nom des conteneurs, soit au nom des repositories (portainer-ce pour portainer/portainer-ce:latest)
 - une instance de [Watchtower](https://github.com/containrrr/watchtower/) ou d'un autre service capable de mettre à jour les conteneurs automatiquement
 
 ## Installation
@@ -30,16 +32,16 @@ A chaque exécution, le programme compare la date de création des conteneurs pr
        `[HORAIRE AVEC SYNTAXE CRON] [CHEMIN/VERS/post-script.sh]`
     3. enregistrer et quitter
 6. insérer votre **login** et votre **password** dans le fichier _settings.json_
-7. préciser si le nom des sondes dans _uptime-kuma_ correspond au noms des conteneurs ou à leur repository dans le fichier _settings.json_
-8. insérer l'**url** devotre instance _uptime-kuma_ dans le fichier _settings.json_
+7. préciser si le nom des sondes dans _Uptime Kuma_ correspond au noms des conteneurs ou à leur repository dans le fichier _settings.json_
+8. insérer l'**url** devotre instance _Uptime Kuma_ dans le fichier _settings.json_
 
 ## Réglages et variables d'environnement
 
 Tous les réglages et autres variables d'environnement sont définis dans le fichier _settings.json_.
 
-| Réglage | Action | Valeurs possibles |
+| Réglage / Variable | Action | Valeurs possibles |
 |----------|----------|----------|
-| probe-type | défini si le nom des somdes _uptime-kuma_ correspond au noms des conteneurs ou à leur repository | _"repo"_ pour repository et _"name"_ pour le nom |
+| probe-type | défini si le nom des somdes _Uptime Kuma_ correspond au noms des conteneurs ou à leur repository | _"repo"_ pour repository et _"name"_ pour le nom |
 | max-update-delay | défini l'intervalle de temps maximale entre la création de la maintenance et sa suppression (en minutes) | n'importe quel nombre entier supérieur à 0 |
 | max-logs-size | défini la taille maximale du fichier des logs (en Mo) -> quand cette taille est dépassée, les logs sont supprimés | n'importe quelle nombre entier ou décimal positif (0 supprime les logs à chaque exécution) |
 | log-level | défini le niveau de logs voulu | - "info" pour tous les logs (aucune maintenance supprimée/créée, maintenance supprimée/créée, suppression des logs, erreurs) |
@@ -47,11 +49,11 @@ Tous les réglages et autres variables d'environnement sont définis dans le fic
 |           |                         | - "error" pour les erreurs seulement |
 |           |                         | - "none" pour aucun log (max-logs-size devient alors inutile) |
 |            |                                           |
-| containers | défini lesconteneurs non pris en compte | liste des conteneurs exclus. Pour ajouter une valeur, mettre une virgule à la fin et ajouter une partie de l'image entre guillemets (Attention !! Mettre le **registre** excluera tous les conteneurs dont l'image provient de ce **registre**, il en va de même pour le **namespace** et le **tag** ! Pour exclure un seul conteneur, utiliser son **repository**.) |
+| containers | défini les conteneurs non pris en compte | liste des conteneurs exclus. Pour ajouter une valeur, mettre une virgule à la fin et ajouter une partie de l'image entre guillemets (Attention !! Mettre le **registre** excluera tous les conteneurs dont l'image provient de ce **registre**, il en va de même pour le **namespace** et le **tag** ! Pour exclure un seul conteneur, utiliser son **repository**.) |
 |            |                                           |
-| login | défini l'identifiant utilisé pour accéder à uptime-kuma | votre identifiant sous forme de chaîne de caractères |
-| password | défini le mot de passe utilisé pour accéder à uptime-kuma | votre mot de passe sous forme de chaîne de caractères |
-| url | défini l'url utilisée pour accéder à uptime-kuma | l'url de votre instance sous forme de chaîne de caractère |
+| login | défini l'identifiant utilisé pour accéder à Uptime Kuma | votre identifiant sous forme de chaîne de caractères |
+| password | défini le mot de passe utilisé pour accéder à Uptime Kuma | votre mot de passe sous forme de chaîne de caractères |
+| url | défini l'url utilisée pour accéder à Uptime Kuma | l'url de votre instance sous forme de chaîne de caractère |
 
 ## Limitations
 
