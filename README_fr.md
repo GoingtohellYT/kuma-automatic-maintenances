@@ -1,5 +1,8 @@
 # Kuma automatic maintenances
 
+[Read in English](README_en.md)
+
+
 Kuma automatic maintenances est un outil pour créer automatiquement des maintenances Uptime Kuma lors de la mise à jour automatique d'un conteneur par Watchtower.
 
 ## Fonctionnement
