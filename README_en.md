@@ -1,4 +1,4 @@
-# Kuma automatic maintenances
+# Kuma automatic maintenances (docker)
 
 Kuma automatic maintenances is a tool that creates Uptime Kuma maintenances when a container is being automatically updated by Watchtower.
 
