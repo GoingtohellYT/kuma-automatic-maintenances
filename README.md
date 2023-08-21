@@ -1,4 +1,4 @@
-# Kuma automatic maintenances
+# Kuma automatic maintenances (docker)
 
 [Read in English](README_en.md)
 
