@@ -221,6 +221,8 @@ async function createMaintenance () {
 
         await browser.close();
         // console.log("Fermeture de l'instance");
+
+       fs.writeFileSync("logs.txt", `\nMaintenance créée pour ${containers_to_update.join(", ")} à ${currentDate}\n`, {flag: 'a'});
     } catch (error) {
         if (log_level != "none") {
             fs.writeFileSync("logs.txt", `\nLa création de la maintenance a échouée à ${currentDate} en raison de : ${error}\n`, {flag: 'a'});
@@ -232,7 +234,6 @@ async function createMaintenance () {
 
 if (containers_to_update.length > 0 && log_level != "none" && log_level != "error") {
     createMaintenance()
-    fs.writeFileSync("logs.txt", `\nMaintenance créée pour ${containers_to_update.join(", ")} à ${currentDate}\n`, {flag: 'a'});
 } else if (log_level == 'info') {
     fs.writeFileSync("logs.txt", `\nAucune maintenance créée à ${currentDate}\n`, {flag: "a"});
 }
