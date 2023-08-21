@@ -23,7 +23,7 @@ Le tout permet la disparition des notifications "service down" lors des mises à
 
 ## Installation
 
-1. cloner le repo : `git clone https://github.com/GoingtohellYT/kuma-automatic-maintenances.git`
+1. cloner le repo : `git clone https://github.com/GoingtohellYT/kuma-automatic-maintenances-docker.git`
 2. rendre les scripts shell exécutable : `chmod +x pre-script.sh` et `chmod +x post-script.sh`
 3. installer les dépendances des modules NodeJS avec `npm install`
 4. s'assurer que Watchtower est exécuté à des heures précises avec la syntaxe cron (par exemple "30 0 12,0 * * *" pour tous les jours à 12h 00min 30s et 00h 00min 30s)
