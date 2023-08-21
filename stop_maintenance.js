@@ -151,7 +151,7 @@ running_date = new Date();
 
 (async () => {
     try {
-        const browser = await puppeteer.launch({headless:'new'}); // creates an instance
+        const browser = await puppeteer.launch({headless: true}); // creates an instance
         const page = await browser.newPage(); //opening a blank page in browser
         await page.goto(`${server_url}/maintenance`); // connects to the right page in Uptime Kuma
 
